@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -24,11 +25,42 @@ string crypto(string mode, string key, string file, string output)
     return "0";
 }
 
+
+string PyS(string command, string data, string name)
+{   
+
+
+    if((command == "QR" || command == "1"))
+    {
+        string cmd = "python py_lib/qr.py -d \"" + data + "\" -n \"" + name + "\"";
+        system(cmd.c_str());
+    }
+    else
+    {
+        return "1";
+    }
+    
+    return "0";
+}
+
+string QR()
+{
+    string data, nazwa;
+    cout<<endl<<"result file name: "<<endl;
+    cin>>nazwa;
+    cout<<"submit qr code data: "<<endl;
+    cin>>data;
+
+
+    PyS("QR", data, nazwa + ".png");
+    return "0";
+}
+
+
 int main()
 {
     
-
-    cout<<endl<<"1. encryption\n2. decryption\n3. setup files\n4. exit\n"<<endl;
+    cout<<endl<<"1. encryption\n2. decryption\n3. setup files\n4. pass-gen\n5. QR\n6. exit"<<endl;
     cin>>wyb;
 
     switch (wyb)
@@ -69,10 +101,50 @@ int main()
             cout<<endl<<"succes! "<<endl;
             break;
         }
-        case '4':
+        case '6':
         {
             cout<<endl<<"BYE!"<<endl;
             return 0;
+
+
+            break;
+        }
+        case '4':
+        {
+            string password = "";
+            double length = 32;
+            cout<<endl<<"password length: ";
+            cin>>length;
+            string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=[]{}|;':\",./<>?";
+
+            srand(time(0));
+
+            for(int i = 0; i < length; i++)
+            {
+                int random_index = rand() % characters.length();
+                password += characters[random_index];
+            }
+
+            cout<<endl<<password;
+            ofstream save;
+            save.open("pass.txt",ios_base::app);
+            save<<password;
+            save.close();
+            cout<<endl<<"password saved in local directory [pass.txt]"<<endl;
+            
+
+            
+
+            break;
+        }
+        case '5':
+        {
+            cout<<endl<<"you can enter your keys and passwords here to easily copy them on your phone"<<endl;
+            QR();
+
+
+
+
             break;
         }
 
@@ -98,6 +170,7 @@ int main()
     cout<<endl<<"executed! "<<endl;
     getchar(); getchar();
     
+    main();
 
 
 }
