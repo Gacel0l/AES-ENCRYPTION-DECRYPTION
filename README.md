@@ -38,4 +38,5 @@ the program can also generate passwords (.exe file)
 
 
 
+        ![image](https://user-images.githubusercontent.com/79628437/229901020-ccc3425b-0f46-4a97-b0c1-8b86a8ba90b7.png)
 
