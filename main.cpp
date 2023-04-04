@@ -28,7 +28,7 @@ int main()
 {
     
 
-    cout<<endl<<"1. szyfrowanie 2. odszyfrowywanie 3. zainstaluj 4. wyjscie"<<endl;
+    cout<<endl<<"1. encryption\n2. decryption\n3. setup files\n4. exit\n"<<endl;
     cin>>wyb;
 
     switch (wyb)
@@ -37,10 +37,10 @@ int main()
         {
             string key, file, output,mode;
             mode = "encrypt";
-            cout<<endl<<"podaj klucz: "; cin>>key;
-            cout<<endl<<"podaj plik: "; cin>>file;
-            cout<<endl<<"podaj plik wyjsciowy: "; cin>>output;
-            cout<<endl<<"Praca w toku..."<<endl;
+            cout<<endl<<"encryption key: "; cin>>key;
+            cout<<endl<<"File Location: "; cin>>file;
+            cout<<endl<<"Output File Location and name: "; cin>>output;
+            cout<<endl<<"Work in progress..."<<endl;
 
 
             crypto(mode,key,file,output);
@@ -51,10 +51,10 @@ int main()
         {
             string key, file, output,mode;
             mode = "decrypt";
-            cout<<endl<<"podaj klucz: "; cin>>key;
-            cout<<endl<<"podaj plik: "; cin>>file;
-            cout<<endl<<"podaj plik wyjsciowy: "; cin>>output;
-            cout<<endl<<"Praca w toku..."<<endl;
+            cout<<endl<<"decryption key: "; cin>>key;
+            cout<<endl<<"File Location: "; cin>>file;
+            cout<<endl<<"Output File Location and name: "; cin>>output;
+            cout<<endl<<"Work in progress..."<<endl;
 
             
 
@@ -66,7 +66,7 @@ int main()
         {
             string cmd = "pip install -r py_lib/requirements.txt";
             system(cmd.c_str());
-            cout<<endl<<"zainstalowano! "<<endl;
+            cout<<endl<<"succes! "<<endl;
             break;
         }
         case '4':
@@ -95,7 +95,7 @@ int main()
 
     }
 
-    cout<<endl<<"wykonano! "<<endl;
+    cout<<endl<<"executed! "<<endl;
     getchar(); getchar();
     
 
