@@ -12,11 +12,12 @@ you can use crypto.py wihout .exe file
 
 
 includes qr code to easily copy passwords or keys and other data to your phone
-QR:
-   python qr.py -d my_pass -n name.png
+
+        QR:
+                python qr.py -d <data (mypass)> -n name.png
   
 
-the program can also generate passwords
+the program can also generate passwords (.exe file)
 
 
 
