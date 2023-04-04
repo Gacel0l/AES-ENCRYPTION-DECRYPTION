@@ -25,4 +25,6 @@ QR:
   this will make it easier for you to use the program(.exe file) works only on windows but python work for all os
   you can also use python script without .exe file
   but the .exe file makes it easy to use
+  
+        ! supported keys length: 16, 24, 32 !
 
