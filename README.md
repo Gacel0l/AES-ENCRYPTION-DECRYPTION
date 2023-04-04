@@ -1,7 +1,7 @@
 # AES-ENCRYPTION-DECRYPTION
-aes encryption/decryption for text and files python and c++ (for all os)
+        aes encryption/decryption for text and files python and c++ (for all os)
 
-python is needed
+                python is needed
 pip install -r requirements.txt
 
 you can use crypto.py wihout .exe file 
@@ -14,8 +14,8 @@ python crypto.py -k my_secret_key decrypt -f encrypted_file.psf -o decrypted_fil
 #auto output file (.psf)
 python crypto.py -k my_secret_key encrypt -f input_file.txt
 
-QR:
-  python qr.py -d my_pass -n name.png
+        QR:
+                python qr.py -d my_pass -n name.png
   
 
 
@@ -26,5 +26,5 @@ QR:
   you can also use python script without .exe file
   but the .exe file makes it easy to use
   
-        ! supported keys length: 16, 24, 32 !
+         supported keys length: 16, 24, 32 
 
