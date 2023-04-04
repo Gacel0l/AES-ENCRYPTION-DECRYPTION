@@ -1,23 +1,22 @@
 # AES-ENCRYPTION-DECRYPTION
-        aes encryption/decryption for text and files python and c++ (for all os)
+aes encryption/decryption for text and files python and c++ (for all os)
 
-                python is needed
-pip install -r requirements.txt
+python is needed
+
+        pip install -r requirements.txt
 
 you can use crypto.py wihout .exe file 
         
-        
-python crypto.py -k my_secret_key encrypt -f input_file.txt -o output_file.psf
+        usage:
+                python py.py -k <16,24,32 key> decrypt or encrypt -f file.location -o o_file.location
 
-python crypto.py -k my_secret_key decrypt -f encrypted_file.psf -o decrypted_file.txt
 
-#auto output file (.psf)
-python crypto.py -k my_secret_key encrypt -f input_file.txt
-
-        QR:
-                python qr.py -d my_pass -n name.png
+includes qr code to easily copy passwords or keys and other data to your phone
+QR:
+   python qr.py -d my_pass -n name.png
   
 
+the program can also generate passwords
 
 
 
