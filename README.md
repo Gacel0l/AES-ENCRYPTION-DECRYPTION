@@ -28,3 +28,4 @@ the program can also generate passwords (.exe file)
   
          supported keys length: 16, 24, 32 
 
+        ![image](https://user-images.githubusercontent.com/79628437/229899606-3fc4a842-d99b-4fd0-aba6-e4b462a3beb7.png)
