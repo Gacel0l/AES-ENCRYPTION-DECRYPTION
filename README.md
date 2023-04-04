@@ -34,4 +34,8 @@ the program can also generate passwords (.exe file)
 ![image](https://user-images.githubusercontent.com/79628437/229900140-7d38ca29-d0fd-42ca-b7d9-c9a54ac66de5.png)
 
 
+![image](https://user-images.githubusercontent.com/79628437/229900283-9eabaf7a-cae9-49db-af94-342c8f308484.png)
+
+
+
 
