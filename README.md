@@ -1,5 +1,5 @@
 # AES-ENCRYPTION-DECRYPTION
-aes encryption/decryption for text and files
+aes encryption/decryption for text and files python and c++ (for all os)
 
 python is needed
 pip install -r requirements.txt
