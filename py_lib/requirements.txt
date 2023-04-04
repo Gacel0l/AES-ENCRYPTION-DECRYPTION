@@ -2,3 +2,6 @@ argparse
 Crypto
 tqdm
 qrcode
+pathlib
+
+
