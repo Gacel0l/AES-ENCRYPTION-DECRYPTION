@@ -70,4 +70,5 @@ def main():
 
 
 if __name__ == '__main__':
+    print("supported keys length: 16, 24, 32")
     main()
