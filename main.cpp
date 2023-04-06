@@ -15,9 +15,19 @@ string crypto(string mode, string key, string file, string output)
         string cmd = "python py_lib/crypto.py encrypt -k \"" +key+"\" -f \"" +file+"\" -o \"" +output + "\"";
         system(cmd.c_str());
     }
-    else
+    else if (mode == "decrypt")
     {
         string cmd = "python py_lib/crypto.py decrypt -k \"" +key+"\" -f \"" +file+"\" -o \"" +output + "\"";
+        system(cmd.c_str());
+    }
+    else if (mode == "d_encrypt")
+    {
+        string cmd = "python py_lib/crypto.py encrypt -k \"" +key+"\" -d \"" +file+"\"";
+        system(cmd.c_str());
+    }
+    else if (mode == "d_decrypt")
+    {
+        string cmd = "python py_lib/crypto.py decrypt -k \"" +key+"\" -d \"" +file+"\"";
         system(cmd.c_str());
     }
 
@@ -66,32 +76,78 @@ int main()
     switch (wyb)
     {
         case '1':
-        {
-            string key, file, output,mode;
-            mode = "encrypt";
-            cout<<endl<<"encryption key: "; cin>>key;
-            cout<<endl<<"File Location: "; cin>>file;
-            cout<<endl<<"Output File Location and name: "; cin>>output;
-            cout<<endl<<"Work in progress..."<<endl;
+        {       
+            string odp;
+            cout<<endl<<"1.encrypt file\n2.encrypt all files in directory"<<endl;
+            cin>>odp;
 
 
-            crypto(mode,key,file,output);
+            if(odp == "1")
+            {
+                 string key, file, output,mode;
+                 mode = "encrypt";
+                 cout<<endl<<"encryption key: "; cin>>key;
+                 cout<<endl<<"File Location: "; cin>>file;
+                 cout<<endl<<"Output File Location and name: "; cin>>output;
+                 cout<<endl<<"Work in progress..."<<endl;
+                 crypto(mode,key,file,output);
+            }
+            else if (odp == "2")
+            {
+                 string key, file, output,mode;
+                 mode = "d_encrypt";
+                 cout<<endl<<"encryption key: "; cin>>key;
+                 cout<<endl<<"directory Location: "; cin>>file;
+                 cout<<endl<<"Work in progress..."<<endl;
+                 crypto(mode,key,file,output);
+            }
+            else
+            {
+                cout<<endl<<"WRONG ACTION! "<<endl;
+            }
+            
+
+           
+
+
+            
 
             break;
         }
         case '2':
         {
-            string key, file, output,mode;
-            mode = "decrypt";
-            cout<<endl<<"decryption key: "; cin>>key;
-            cout<<endl<<"File Location: "; cin>>file;
-            cout<<endl<<"Output File Location and name: "; cin>>output;
-            cout<<endl<<"Work in progress..."<<endl;
+            string odp;
+            cout<<endl<<"1.decrypt file\n2.decrypt all files in directory"<<endl;
+            cin>>odp;
+
+            if(odp == "1")
+            {
+                string key, file, output,mode;
+                mode = "decrypt";
+                cout<<endl<<"decryption key: "; cin>>key;
+                cout<<endl<<"File Location: "; cin>>file;
+                cout<<endl<<"Output File Location and name: "; cin>>output;
+                cout<<endl<<"Work in progress..."<<endl;
 
             
 
-            crypto(mode,key,file,output);
+                crypto(mode,key,file,output);
 
+            }
+            else if (odp == "2")
+            {
+                string key, file, output,mode;
+                mode = "d_decrypt";
+                cout<<endl<<"decryption key: "; cin>>key;
+                cout<<endl<<"directory Location: "; cin>>file;
+                cout<<endl<<"Work in progress..."<<endl;
+
+            
+
+                crypto(mode,key,file,output);
+            }
+
+           
             break;
         }
         case '3':
@@ -130,7 +186,7 @@ int main()
             save.open("pass.txt",ios_base::app);
             save<<password;
             save.close();
-            cout<<endl<<"password saved in local directory [pass.txt]"<<endl;
+            cout<<endl<<endl<<"\n password saved in local directory [pass.txt]"<<endl;
             
 
             
