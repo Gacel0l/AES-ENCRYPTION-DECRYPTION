@@ -8,13 +8,13 @@ python is needed
 you can use crypto.py wihout .exe file 
         
 usage:
-                python crypto.py -k <16,24,32 key> decrypt or encrypt -f file.location -o o_file.location
+        python crypto.py -k <16,24,32 key> decrypt or encrypt -f file.location -o o_file.location
 
 
 includes qr code to easily copy passwords or keys and other data to your phone
 
 QR:
-                python qr.py -d <data (mypass)> -n name.png
+        python qr.py -d <data (mypass)> -n name.png
   
 
 the program can also generate passwords (.exe file)
