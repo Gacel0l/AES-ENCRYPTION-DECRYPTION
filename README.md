@@ -47,6 +47,9 @@ Encrypt/Decrypt all files in directory:
 
 ![image](https://user-images.githubusercontent.com/79628437/230464002-a127f91e-b80f-4fd0-9423-f81a594a3f5e.png)
 
+usage:
+        python crypto.py -k <0000000000000000 - this is the key> <decrypt - mode> -d <directory location>
+
 
 
 
