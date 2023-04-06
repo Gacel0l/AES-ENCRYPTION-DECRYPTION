@@ -41,7 +41,8 @@ the program can also generate passwords (.exe file)
 
 
 
-![image](https://user-images.githubusercontent.com/79628437/229901020-ccc3425b-0f46-4a97-b0c1-8b86a8ba90b7.png)
+![image](https://user-images.githubusercontent.com/79628437/230464359-5c87ebfb-dd81-4560-b23e-0d10edd832b9.png)
+
 
 Encrypt/Decrypt all files in directory:
 
