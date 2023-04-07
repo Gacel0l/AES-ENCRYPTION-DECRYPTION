@@ -10,6 +10,7 @@ you can use crypto.py wihout .exe file
         usage:
                 python crypto.py -k <16,24,32 key> decrypt or encrypt -f file.location -o o_file.location
                 python crypto.py -k <0000000000000000 - this is the key> <decrypt - mode> -d <directory location>
+                python crypto.py -k 0000000000000000 decrypt -disk E:\
                 
 
 
