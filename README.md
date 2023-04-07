@@ -60,6 +60,6 @@ Encrypt/Decrypt all files in directory:
 ![image](https://user-images.githubusercontent.com/79628437/230614610-e196ab9c-834f-4f80-ac14-148c59b73c36.png)
 
 if something doesn't work for you use Python Virtual Environments
-https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
+https://pythonbasics.org/virtualenv/
 
 
