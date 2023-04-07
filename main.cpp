@@ -30,6 +30,18 @@ string crypto(string mode, string key, string file, string output)
         string cmd = "python py_lib/crypto.py decrypt -k \"" +key+"\" -d \"" +file+"\"";
         system(cmd.c_str());
     }
+    else if (mode == "disk_encrypt")
+    {
+
+        string cmd = "python py_lib/crypto.py encrypt -k \"" +key+"\" -disk \"" + file ;
+        system(cmd.c_str());
+    }
+    else if (mode == "disk_decrypt")
+    {
+        
+        string cmd = "python py_lib/crypto.py decrypt -k \"" +key+"\" -disk \"" + file ;
+        system(cmd.c_str());
+    }
 
 
     return "0";
@@ -78,7 +90,7 @@ int main()
         case '1':
         {       
             string odp;
-            cout<<endl<<"1.encrypt file\n2.encrypt all files in directory"<<endl;
+            cout<<endl<<"1.encrypt file\n2.encrypt all files in directory\n3.encrypt disk"<<endl;
             cin>>odp;
 
 
@@ -101,6 +113,15 @@ int main()
                  cout<<endl<<"Work in progress..."<<endl;
                  crypto(mode,key,file,output);
             }
+            else if (odp == "3")
+            {
+                 string key, file, output,mode;
+                 mode = "disk_encrypt";
+                 cout<<endl<<"encryption key: "; cin>>key;
+                 cout<<endl<<"disc: "; cin>>file;
+                 cout<<endl<<"Work in progress..."<<endl;
+                 crypto(mode,key,file,output);
+            }
             else
             {
                 cout<<endl<<"WRONG ACTION! "<<endl;
@@ -117,7 +138,7 @@ int main()
         case '2':
         {
             string odp;
-            cout<<endl<<"1.decrypt file\n2.decrypt all files in directory"<<endl;
+            cout<<endl<<"1.decrypt file\n2.decrypt all files in directory\n3.decrypt disk"<<endl;
             cin>>odp;
 
             if(odp == "1")
@@ -145,6 +166,22 @@ int main()
             
 
                 crypto(mode,key,file,output);
+            }
+            else if (odp == "3")
+            {
+                string key, file, output,mode;
+                mode = "disk_decrypt";
+                cout<<endl<<"decryption key: "; cin>>key;
+                cout<<endl<<"disk: "; cin>>file;
+                cout<<endl<<"Work in progress..."<<endl;
+
+            
+
+                crypto(mode,key,file,output);
+            }
+            else
+            {
+                cout<<endl<<"WRONG ACTION! "<<endl;
             }
 
            

@@ -57,6 +57,7 @@ def main():
     parser.add_argument("-f", "--file", help="Input file location")
     parser.add_argument("-o", "--output", help="Output file location")
     parser.add_argument("-d", "--dir", help="Directory to encrypt/decrypt")
+    parser.add_argument("-disk", help="Disk to encrypt/decrypt")
     args = parser.parse_args()
 
     key = args.key.encode('utf-8')
@@ -64,29 +65,46 @@ def main():
     in_file = args.file
     out_file = args.output
     directory = args.dir
+    disk = args.disk
 
-    if directory:
-        for root, dirs, files in os.walk(directory):
-            for file in files:
-                file_path = os.path.join(root, file)
-                out_path = os.path.join(root, f"{os.path.splitext(file)[0]}_{mode}{os.path.splitext(file)[1]}")
-                if mode == 'encrypt':
-                    encrypt_file(key, file_path, out_path)
-                    os.remove(file_path)
-                else:
-                    decrypt_file(key, file_path, out_path)
-                    os.remove(file_path)
-    else:
-        if mode == 'encrypt':
-            out_file = f"{os.path.splitext(in_file)[0]}_{mode}{os.path.splitext(in_file)[1]}"
-            encrypt_file(key, in_file, out_file)
+    if disk:
+        if os.path.isdir(disk):
+            for root, dirs, files in os.walk(disk):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    out_path = os.path.join(root, f"{os.path.splitext(file)[0]}_{mode}{os.path.splitext(file)[1]}")
+                    if mode == 'encrypt':
+                        encrypt_file(key, file_path, out_path)
+                        os.remove(file_path)
+                    else:
+                        decrypt_file(key, file_path, out_path)
+                        os.remove(file_path)
         else:
-            out_file = f"{os.path.splitext(in_file)[0]}_{mode}{os.path.splitext(in_file)[1]}"
-            decrypt_file(key, in_file, out_file)
+            print(f"Invalid disk: {disk}")
+    else:
+        if directory:
+            for root, dirs, files in os.walk(directory):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    out_path = os.path.join(root, f"{os.path.splitext(file)[0]}_{mode}{os.path.splitext(file)[1]}")
+                    if mode == 'encrypt':
+                        encrypt_file(key, file_path, out_path)
+                        os.remove(file_path)
+                    else:
+                        decrypt_file(key, file_path, out_path)
+                        os.remove(file_path)
+        else:
+            if mode == 'encrypt':
+                out_file = f"{os.path.splitext(in_file)[0]}_{mode}{os.path.splitext(in_file)[1]}"
+                encrypt_file(key, in_file, out_file)
+            else:
+                out_file = f"{os.path.splitext(in_file)[0]}_{mode}{os.path.splitext(in_file)[1]}"
+                decrypt_file(key, in_file, out_file)
+
 
 
 
 
 if __name__ == '__main__':
-    print("supported keys length: 16, 24, 32")
+    print("\n supported keys length: 16, 24, 32 \n")
     main()
