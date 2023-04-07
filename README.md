@@ -53,4 +53,8 @@ Encrypt/Decrypt all files in directory:
 
 
 
+        disc encrypt/decrypt
+               python crypto.py -k 0000000000000000 decrypt -disk E:\
+ 
+![image](https://user-images.githubusercontent.com/79628437/230614610-e196ab9c-834f-4f80-ac14-148c59b73c36.png)
 
