@@ -61,5 +61,5 @@ Encrypt/Decrypt all files in directory:
 
 if something doesn't work for you use Python Virtual Environments
 https://pythonbasics.org/virtualenv/
-
+https://www.youtube.com/watch?v=ebeebaumL3M
 
